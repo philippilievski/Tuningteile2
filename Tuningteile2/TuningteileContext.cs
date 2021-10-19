@@ -21,5 +21,6 @@ namespace Tuningteile2
         public DbSet<Modell> Modells { get; set; }
         public DbSet<Tuningpart> Tuningparts { get; set; }
         public DbSet<ModellTuningpart> ModellTuningparts { get; set; }
+        public DbSet<Brand> Brands { get; set; }
     }
 }

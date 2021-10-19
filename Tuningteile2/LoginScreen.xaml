@@ -15,23 +15,27 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
-        <TextBox
-            Name="txtBoxUsername"
+        <StackPanel
             Grid.Row="0"
-            Width="120"
             HorizontalAlignment="Center"
-            VerticalAlignment="Bottom" />
-        <PasswordBox
-            Name="pwdBoxPassword"
+            VerticalAlignment="Bottom">
+            <Label>Username</Label>
+            <TextBox Name="txtBoxUsername" Width="120" />
+        </StackPanel>
+        <StackPanel
             Grid.Row="1"
-            Width="120"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center" />
+            VerticalAlignment="Center">
+            <Label>Password</Label>
+            <PasswordBox Name="pwdBoxPassword" Width="120" />
+        </StackPanel>
         <Button
+            Name="btnLogin"
             Grid.Row="2"
             Width="120"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top">
+            VerticalAlignment="Top"
+            Click="btnLogin_Click">
             Login
         </Button>
     </Grid>

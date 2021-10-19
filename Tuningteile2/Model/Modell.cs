@@ -11,6 +11,7 @@ namespace Tuningteile2.Model
         public int ModellID { get; set; }
         public string Title { get; set; }
         public int YearManufactured { get; set; }
+        public Brand Brand { get; set; }
         public List<ModellTuningpart> ModellTuningparts { get; set; }
     }
 }

@@ -28,6 +28,7 @@
                 SelectionChanged="dgModells_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding ModellID}" Header="ID" />
+                    <DataGridTextColumn Binding="{Binding Brand.Title}" Header="Brand" />
                     <DataGridTextColumn Binding="{Binding Title}" Header="Modell" />
                     <DataGridTextColumn Binding="{Binding YearManufactured}" Header="Manufactured in year" />
                 </DataGrid.Columns>

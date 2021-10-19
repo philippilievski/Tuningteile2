@@ -22,6 +22,9 @@ namespace Tuningteile2
     public partial class AddCompatabilityWindow : Window
     {
         DataLogic dataLogic = new DataLogic();
+        /// <summary>
+        /// Erstellt das Fenster und befüllt die Datagrids mit Werten aus der Datenbank
+        /// </summary>
         public AddCompatabilityWindow()
         {
             InitializeComponent();
@@ -29,10 +32,18 @@ namespace Tuningteile2
             dgTuningparts.ItemsSource = dataLogic.GetTuningparts();
         }
 
+        /// <summary>
+        /// Öffnet ein Fenster mit Möglichkeit eine Beziehung zwischen Modell und Tuningteil herzustellen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            dataLogic.AddCompatability((Modell)dgModells.SelectedItem, (Tuningpart)dgTuningparts.SelectedItem);
-            this.Close();
+            if(dgModells.SelectedItem != null && dgTuningparts.SelectedItem != null)
+            {
+                dataLogic.AddCompatability((Modell)dgModells.SelectedItem, (Tuningpart)dgTuningparts.SelectedItem);
+                this.Close();
+            }
         }
     }
 }

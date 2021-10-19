@@ -30,7 +30,6 @@ namespace Tuningteile2
             txtBoxTitle.Text = tuningpart.Title;
             txtBoxPrice.Text = Convert.ToString(tuningpart.Price);
             cmbBoxCategory.ItemsSource = dataLogic.GetCategories();
-            cmbBoxCategory.SelectedItem = tuningpart.Category;
             
         }
 
@@ -43,6 +42,10 @@ namespace Tuningteile2
                 tuningpart.Category = (Category)cmbBoxCategory.SelectedItem;
                 dataLogic.UpdateTuningpart(tuningpart);
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bitte füllen Sie alle Felder aus");
             }
         }
     }

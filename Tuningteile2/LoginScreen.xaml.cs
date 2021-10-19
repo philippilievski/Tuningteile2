@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Tuningteile2.Login;
 
 namespace Tuningteile2
 {
@@ -22,6 +23,30 @@ namespace Tuningteile2
         public LoginScreen()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if(txtBoxUsername.Text != null && pwdBoxPassword.Password != null)
+            {
+                var pwd = LoginLogic.Compute256Hash(pwdBoxPassword.Password);
+
+                var isCorrect = LoginLogic.Validation(txtBoxUsername.Text, pwd);
+                if(isCorrect)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Username or Password incorrect");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bitte geben Sie Ihren Benutzernamen und Passwort ein!");
+            }
         }
     }
 }
