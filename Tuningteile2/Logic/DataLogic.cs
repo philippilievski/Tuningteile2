@@ -58,5 +58,20 @@ namespace Tuningteile2.Logic
             tuningteileContext.Update(tuningpart);
             tuningteileContext.SaveChanges();
         }
+        public void AddModell(Modell modell)
+        {
+            tuningteileContext.Add(modell);
+            tuningteileContext.SaveChanges();
+        }
+
+        public void AddCompatability(Modell modell, Tuningpart tuningpart)
+        {
+            ModellTuningpart modellTuningpart = new ModellTuningpart();
+            modellTuningpart.Modell = modell;
+            modellTuningpart.Tuningpart = tuningpart;
+
+            tuningteileContext.Add(modellTuningpart);
+            tuningteileContext.SaveChanges();
+        }
     }
 }

@@ -53,5 +53,17 @@ namespace Tuningteile2
             dataLogic.RemoveTuningPart((Tuningpart)dgTuningparts.SelectedItem);
             dgTuningparts.ItemsSource = dataLogic.GetTuningparts();
         }
+
+        private void btnAddModell_Click(object sender, RoutedEventArgs e)
+        {
+            AddModellWindow addModellWindow = new AddModellWindow();
+            addModellWindow.ShowDialog();
+        }
+
+        private void btnAddCompatability_Click(object sender, RoutedEventArgs e)
+        {
+            AddCompatabilityWindow addCompatabilityWindow = new AddCompatabilityWindow();
+            addCompatabilityWindow.ShowDialog();
+        }
     }
 }

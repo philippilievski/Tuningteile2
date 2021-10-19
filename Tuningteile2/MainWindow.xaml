@@ -84,5 +84,23 @@
             Click="btnAddTuningpart_Click">
             add
         </Button>
+        <Button
+            Name="btnAddModell"
+            Grid.Row="1"
+            Grid.Column="0"
+            Width="100"
+            Height="40"
+            Click="btnAddModell_Click">
+            add
+        </Button>
+        <Button
+            Name="btnAddCompatability"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="100"
+            Height="40"
+            Click="btnAddCompatability_Click">
+            add
+        </Button>
     </Grid>
 </Window>
